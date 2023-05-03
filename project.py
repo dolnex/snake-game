@@ -19,10 +19,14 @@ clock = pygame.time.Clock()
 razmer_zmei = 10
 snake_speed = 15
 
-pygame.font.init()
-pygame.font = pygame.font.Font(None, 70)
-lose = pygame.font.render('YOU LOSE!', True, (255, 0, 0))
+
+score_font = pygame.font.SysFont("Neuropol Medium", 35)
+
+
  
+def Your_score(score):
+    value = score_font.render("Your Score: " + str(score), True, black)
+    window.blit(value, (0, 0))
 
 def our_snake(razmer_zmei, snake_list):
     for x in snake_list:
@@ -76,6 +80,7 @@ def game():
             del snake_List[0]
  
         our_snake(razmer_zmei, snake_List)
+        Your_score(Length_of_snake - 1)
  
  
  
@@ -91,4 +96,4 @@ def game():
     
  
  
-game() 
+game()

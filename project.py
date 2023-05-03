@@ -1,13 +1,11 @@
-from pygame import *
-from random import *
+import pygame
+import random
  
 pygame.init()
  
-white = (255, 255, 255)
-yellow = (255, 255, 102)
+
 black = (0, 0, 0)
 red = (213, 50, 80)
-green = (0, 255, 0)
 blue = (150, 255, 255)
  
 win_width = 700
@@ -25,12 +23,11 @@ pygame.font.init()
 pygame.font = pygame.font.Font(None, 70)
 lose = pygame.font.render('YOU LOSE!', True, (255, 0, 0))
  
+
 def our_snake(razmer_zmei, snake_list):
     for x in snake_list:
         pygame.draw.rect(window, black, (x[0], x[1], razmer_zmei, razmer_zmei))
  
- 
-
 
 def game():
     game_over = False
@@ -67,7 +64,6 @@ def game():
 
         if x1 >= win_width or x1 < 0 or y1 >= win_height or y1 < 0:
             game_over = True
-            window.blit(lose,(200,200))
         x1 += x1_change
         y1 += y1_change
         window.fill(blue)
